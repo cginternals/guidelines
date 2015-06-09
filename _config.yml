@@ -3,7 +3,7 @@ title:       C++ and GUI Development Guidelines
 email:       max.jendruk@student.hpi.de
 author:      hpicgs 
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
-baseurl:     "guidelines"
+baseurl:     ""
 url:         "http://hpicgs.github.io/"
 
 # Google analytics
