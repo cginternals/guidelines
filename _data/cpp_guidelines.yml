@@ -1,0 +1,168 @@
+code_arrangement:
+  title: Code Arrangement
+  entries:
+    - text: "No implementation in `.h` files (header-only implementations resides in `.hpp` file)."
+    - text: "Files containing structs, classes, or enums are written in CamelCase."
+    - text: "Files containing solely includes, functions or type definitions are written in lowercase."
+    - text: "No `using namespace` in header files."
+    - text: "Only a single type declaration per header file for structs, classes, and enums."
+
+code_formatting:
+  title: Code Formatting
+  entries:
+    - text: "All source code encoding is `UTF-8`."
+    - text: "Indentation is done using `4` spaces."
+    - text: "Curly braces are placed on the following line without indentation."
+    - text: "Local public includes are formatted like the external variant using `<` and `>`."
+    - text: "Be consistent within your own code and the project's code that you are working on."
+
+type_naming:
+  title: Type Naming
+  entries:
+    - text: "Classes and Enums are named using CamelCase."
+    - text: "Abstract classes have the `Abstract` prefix."
+    - text: "Interfaces should be indistinguishable from normal abstract classes."
+    - text: "Traits are named after Capabilities, e.g., `Nameable`, `Identifyable`, `Collectible`."
+    - text: "Typedefs/Usings are named using the naming scheme of the aliased type."
+
+member_function_naming:
+  title: Member Function Naming
+  entries:
+    - text: "Getters / trivial queries are named without `get` prefix."
+    - text: "Non-trivial queries / getter has the prefix `get`."
+    - text: "Setters have a `set` prefix."
+
+variable_naming:
+  title: Variable Naming
+  entries:
+    - text: "Member variables have a `m_` prefix."
+    - text: "Thread-local variables have a `t_` prefix."
+    - text: "Static variables have a `s_` prefix."
+    - text: "Global variables have a `g_` prefix."
+    - text: "Local variables and formal parameters have no prefix."
+
+
+designing_classes:
+  title: Designing Classes
+  entries:
+    - text: "Use public inheritance for all normal types of inheritance."
+    - text: "Virtual destructors is the default."
+    - text: "The public interface should be non-virtual."
+    - text: "Use protected inheritance for internal traits."
+    - text: "Avoid virtual inheritance."
+    - text: "Avoid friend classes."
+    - text: "Make copy constructors explicit if implicit conversion is not intended."
+    - text: "Use `class` for structures with behavior, `struct` for simple structures."
+    - text: "Avoid inner classes."
+    - text: "Adhere to the given declaration order (i.e. member variables last …)."
+    - text: "Prefer value over pointer members."
+
+designing_interfaces_signatures:
+  title: Designing Interfaces Signatures
+  entries:
+    - text: "Create explicit methods for optional parameters."
+    - text: "For declaration of function signature: use `const` to indicate parameters that may change but will not from the viewport of the caller."
+    - text: "For definition of a function signature: use additional const to indicate the implementation will not change the parameter."
+    - text: "Follow the table of parameter passing."
+
+including_dependencies:
+  title: Include Dependencies
+  entries:
+    - text: "Use forward declarations where applicable."
+    - text: "Never use forward declarations for the following libraries: STL, glm (use `glm/fwd.hpp` instead)(exception: `iosfwd`)."
+    - text: "Include order for `.h`: STL, glm, Qt, glew, glfw, own headers."
+    - text: "Include order for `.cpp`: Own header, then the same as `.h`."
+    - text: "Include order for `.hpp`: Own header, then the same as `.h`."
+    - text: "Sort header groups alphabetically."
+    - text: "Use `#pragma once` instead of `#define` guards."
+
+implementation_design:
+  title: Implementation Design
+  entries:
+    - text: "Use guard clauses where applicable."
+    - text: "Explicitly state assertions."
+    - text: "Use C++ style casts (static, dynamic, reinterpret)."
+    - text: "Don't use inline."
+    - text: "Use princrementation as default."
+    - text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`, consider right-hand style)."
+    - text: "Prefer the standard template library (especially the Algorithms library) over custom code."
+    - text: "Make use of suffix literals."
+    - text: "Consider for-loop hierarchy."
+    - text: "Avoid owning raw pointers, new and delete (Smart pointers are the default)."
+    - text: "Use non-owning raw `*` and `&` especially for parameters."
+    - text: "Declare constant variables `const`."
+    - text: "Return by value more often."
+    - text: "Prefer small and focused functions."
+
+comment_style:
+  title: Comment Style
+  entries:
+    - text: "Follow the comment style guidelines specific to the project."
+    - text: "Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect (Form: `// TODO(<name|email>) <description>`)."
+    - text: "Add comments in tricky, non-obvious, interesting, or important parts of your implementation code."
+    - text: "Do not describe the code; assume that the person reading the code knows C++ better than you do."
+    - text: "Eventually remove commented code; we have version control systems."
+
+general_cpp11_features:
+  title: General C++11 Features
+  entries:
+    - text: "Use `override` for overridden methods, omit redundant virtual ."
+    - text: "Use `auto` where applicable (see right-hand style)."
+    - text: "Avoid `mutable`."
+    - text: "Avoid `std::bind` (favor lambdas)."
+    - text: "Use enum classes and specify underlying type."
+    - text: "Use `= delete` and `= default` where applicable (hint: can also be used in definition)."
+    - text: "Prefer `= default` over empty methods."
+    - text: "Use `using` instead of `typedef`."
+    - text: "Use uniform initialization except for container constructors where you don't want to pass elements."
+    - text: "Know how to view deduced types."
+
+templates:
+  title: Templates
+  entries:
+    - text: "Always split template declaration and definition."
+    - text: "Include implementation file in header file and vice versa."
+
+cross_platform_compatibility:
+  title: Cross-platform Compatibility
+  entries:
+    - text: "All Dependencies are available cross-platform."
+    - text: "Platform dependent code is dispatched using `WIN32`, `__APPLE__` and the else clause for Linux."
+    - text: "Always include respective c standard library headers (use e.g. `#include <cmath>`)."
+
+library_design:
+  title: Library Design
+  entries:
+    - text: "Export only public classes, structs and functions (`<library uppercase name>_API`)."
+    - text: "Don't export templates and enums (it is illegal anyway)."
+    - text: "Public headers belong in `source/<library name>/include/<library name>/`."
+    - text: "Private headers and sources belong in `source/<library name>/source/`."
+
+commmon_mistakes:
+  title: Common Mistakes
+  entries:
+    - text: "`std::function` is not the type of lambdas, it's a wrapper."
+    - text: "`dynamic_cast` is not the default for class up casts; if you are sure, use `static_cast`."
+    - text: "C++ is not Java; Use stack memory to initialize concrete types."
+    - text: "Don't use iterators into resized vectors."
+
+performance_considerations:
+  title: Performance Considerations
+  entries:
+    - text: "Avoid continous heap memory allocations in large loops."
+
+miscellaneous:
+  title: Miscellaneous
+  entries:
+    - text: "Don't use constant expressions as they are not fully supported by all compilers."
+    - text: "Pass const references where identity of parameter is not important (and the object can be copied)."
+    - text: "Pass (const) pointer where identity of parameter is important (and the object may not be copied)."
+    - text: "All costly operations should be performed lazy."
+    - text: "Never use partial function specialization (hint: not specified)."
+    - text: "Never use virtual template methods (hint: not specified)."
+    - text: "Real cross-platform GLSL code should use `#version 150 core` for OS X 10.9 or `#version 410 core` for a newer OS X."
+    - text: "Know when to use `nullptr`, `0` and `NULL`."
+    - text: "Avoid down casts."
+    - text: "Use nonmember functions for symmetric operators."
+    - text: "Use `std::vector<T>` as your default container."
+    - text: "Prefer iterators over index based access."
