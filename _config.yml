@@ -4,7 +4,7 @@ email:       max.jendruk@student.hpi.de
 author:      hpicgs 
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
-url:         "http://hpicgs.github.io/"
+url:         "http://hpicgs.github.io/guidelines"
 
 # Google analytics
 google_analytics:
