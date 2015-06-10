@@ -29,7 +29,7 @@ member_function_naming:
   title: Member Function Naming
   entries:
     - text: "Getters / trivial queries are named without `get` prefix."
-    - text: "Non-trivial queries / getter has the prefix `get`."
+    - text: "Non-trivial queries / getters have the prefix `get`."
     - text: "Setters have a `set` prefix."
 
 variable_naming:
@@ -101,7 +101,7 @@ comment_style:
     - text: "Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect (Form: `// TODO(<name|email>) <description>`)."
     - text: "Add comments in tricky, non-obvious, interesting, or important parts of your implementation code."
     - text: "Do not describe the code; assume that the person reading the code knows C++ better than you do."
-    - text: "Eventually remove commented code; we have version control systems."
+    - text: "Eventually remove commented code; we use version control systems."
 
 general_cpp11_features:
   title: General C++11 Features
