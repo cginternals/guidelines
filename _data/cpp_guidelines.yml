@@ -2,7 +2,7 @@ code_arrangement:
   title: Code Arrangement
   entries:
     - text: "No implementation in `.h` files (header-only implementations resides in `.hpp` file)."
-    - text: "Files containing structs, classes, or enums are written in CamelCase."
+    - text: "Files containing structs, classes, or enums are written in ({{http://en.wikipedia.org/wiki/CamelCase}}CamelCase)."
     - text: "Files containing solely includes, functions or type definitions are written in lowercase."
     - text: "No `using namespace` in header files."
     - text: "Only a single type declaration per header file for structs, classes, and enums."
