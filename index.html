@@ -6,12 +6,15 @@ layout: default
   <h1>C++ Programming Guidelines</h1>
   <div class="posts">
     {% for category in site.data.cpp_guidelines %}
-      {% assign key = category | first %}
-      {% assign content = category | last %}
-      <h3 id="{{ key }}">{{ content.title }} <a href="#{{ key }}" class="fa fa-link"></a></h3>
-      {% for post in content.entries %}
-        <div class="post">
-          <p class="post-title">{{ post.text | markdownify }}</p>
+      {% capture category_id %}CPP.{{category.id}}{% endcapture %}
+      <h3 id="{{ category_id }}">{{ category.title }} <a href="#{{ category_id }}" class="fa fa-link"></a></h3>
+      {% for post in category.entries %}
+        {% capture post_id %}{{category_id}}.{{post.id}}{% endcapture %}
+        <div id="{{ post_id }}" class="post">
+          <p class="post-title">
+            {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
+            <a href="#{{ post_id }}" class="fa fa-link"></a>
+          </p>
         </div>
         {% endfor %}
     {% endfor %} 
