@@ -15,6 +15,9 @@ permalink: /cpp/
           <p class="post-title">
             {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
             <a href="#{{ post_id }}" class="fa fa-link"></a>
+            {% if post.ref %}
+              <a href="" class="fa fa-external-link"></a>
+            {% endif %}
           </p>
         </div>
         {% endfor %}

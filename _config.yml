@@ -9,7 +9,7 @@ baseurl:     "/guidelines"
 google_analytics:
 
 # Optional features
-animated:           false
+animated:           true
 show_related_posts: false
 show_post_footers:  false
 
