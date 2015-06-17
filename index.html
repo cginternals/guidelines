@@ -3,20 +3,12 @@ layout: default
 ---
 
 <div class="home">
-  <h1>C++ Programming Guidelines</h1>
+  <h1>C++ and GUI Programming Guidelines</h1>
   <div class="posts">
-    {% for category in site.data.cpp_guidelines %}
-      {% capture category_id %}CPP.{{category.id}}{% endcapture %}
-      <h3 id="{{ category_id }}">{{ category.title }} <a href="#{{ category_id }}" class="fa fa-link"></a></h3>
-      {% for post in category.entries %}
-        {% capture post_id %}{{category_id}}.{{post.id}}{% endcapture %}
-        <div id="{{ post_id }}" class="post">
-          <p class="post-title">
-            {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
-            <a href="#{{ post_id }}" class="fa fa-link"></a>
-          </p>
+        <div class="post">
+          <h3><a href="/cpp/">C++ Programming Guidelines</h3>
         </div>
-        {% endfor %}
-    {% endfor %} 
   </div>
+
+  {% comment %}{% include pagination.html %}{% endcomment %}
 </div>
