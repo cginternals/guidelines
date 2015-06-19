@@ -20,7 +20,7 @@
           {% assign active_classes = "" %}
         {% endif %}
         <li class="col-12">
-          <a class="px3 block button button-transparent {{ active_classes }}" href='{{node.url}}'>{{node.title}}</a>
+          <a class="px3 block button button-transparent {{ active_classes }}" href='{{ node.url | prepend: site.baseurl }}'>{{node.title}}</a>
           {% if active and node.data != nil %}
             <ul class="list-reset">
               {% for category in site.data[node.data] %}
