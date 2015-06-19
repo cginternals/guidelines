@@ -2,9 +2,10 @@
 layout: post
 title: Reasonable Default Advice for Passing Parameters
 date: 2015-06-17 14:42:59
-summary: 
 categories: c++
 ---
+
+Some nice text before.
 
 {% include parameter_passing_table.html %}
 
