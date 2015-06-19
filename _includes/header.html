@@ -1,14 +1,6 @@
-<header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="/{{ site.baseurl }}" class="site-title">{{ site.title }}</a>
-      <nav class="site-nav right">
-        {% include navigation.html %}
-      </nav>
-      <div class="clearfix"></div>
-      {% if site.show_social_icons %}
-        {% include social_links.html %}
-      {% endif %}
-    </div>
+<header class="sm-fixed sm-w-navbar bottom-0 top-0 left-0 overflow-x-auto white bg-navy">
+  <div class="navbar">
+    <h1 class="title px3 py1 aqua">{{ site.title }}</h1>
+    {% include navigation.html %}
   </div>
 </header>

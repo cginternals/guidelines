@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body class="{% if site.animated %}animated fade-in-down{% endif %}">
-  <div class="site-wrap">
-    {% include header.html %}
-
-    <div class="post p2 p-responsive wrap" role="main">
-      <div class="measure">
+<body>
+  {% include header.html %}
+  <div class="sm-ml-navbar">
+    <div role="main" class="container">
+      <div class="md-col-7 p3 mx-auto">
         {{ content }}
       </div>
     </div>
   </div>
-
   {% include footer.html %}
 </body>
 </html>

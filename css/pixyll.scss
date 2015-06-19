@@ -4,6 +4,7 @@
 
 @charset "utf-8";
 
-@import "basscss";
+@import "variables";
+@import "basscss-sass/basscss";
 @import "main";
 @import "solarized-light";
