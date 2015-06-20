@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: About
 weight: 2
 in_menu: yes

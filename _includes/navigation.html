@@ -3,16 +3,16 @@
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
 
-<nav class="heading-font">
+<nav>
   <ul class="list-reset">
     {% assign pages = site.pages | sort: 'weight'  %}
     {% for node in pages reversed %}
       {% assign node_url_parts = node.url | split: '/' %}
-      {% assign node_url_parts_size = url_parts | size %}
-      {% assign node_rm = url_parts | last %}
+      {% assign node_url_parts_size = node_url_parts | size %}
+      {% assign node_rm = node_url_parts | last %}
       {% assign node_base_url = node.url | replace: rm %}
-      {% if node.in_menu %}
-        {% if base_url == node_base_url or (node.title == "Articles" and page.is_post) %}
+      {% if node.in_menu and node_url_parts_size < 4 %}
+        {% if base_url contains node_base_url or (node.title == "Articles" and page.is_post) %}
           {% assign active = true %}
           {% assign active_classes = "main-color bg-accent-color" %}
         {% else %}

@@ -9,9 +9,9 @@ baseurl:     "/guidelines"
 markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    "/:year/:month/:day/:title/"
+permalink:    "articles/:year/:month/:day/:title/"
 paginate:     5
-paginate_path: "/articles/page:num/"
+paginate_path: "/articles/page/:num/"
 sass:
   compressed: true
 

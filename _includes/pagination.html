@@ -1,20 +1,17 @@
+{% assign button_classes = "button button-narrow bg-main-color"%}
 <div class="pagination clearfix mb1 mt4">
   <div class="left">
     {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="pagination-item" href="{{ site.baseurl }}/">Newer</a>
-      {% else %}
-        <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.previous_page}}/">Newer</a>
-      {% endif %}
+        <a class="{{ button_classes }}" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
     {% else %}
-      <span class="pagination-item disabled">Newer</span>
+      <span class="{{ button_classes }} is-disabled">Newer</span>
     {% endif %}
   </div>
   <div class="right">
     {% if paginator.next_page %}
-      <a class="pagination-item" href="{{ site.baseurl }}/page{{paginator.next_page}}/">Older</a>
+      <a class="{{ button_classes }}" href="{{ paginator.next_page_path | prepend: site.baseurl  }}/">Older</a>
     {% else %}
-      <span class="pagination-item disabled">Older</span>
+      <span class="{{ button_classes }} is-disabled">Older</span>
     {% endif %}
   </div>
 </div>

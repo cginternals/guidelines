@@ -17,9 +17,9 @@ data: cpp_guidelines
         <p class="guidelines-entry flex-auto border-bottom border-darken-2 sm-py1" id="{{ post_id }}">
           {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
           <span class="links">
-            <a href="#{{ post_id }}" class="fa fa-share-alt-square"></a>
+            <a href="#{{ post_id }}" class="entry-link fa fa-share-alt-square"></a>
             {% if post.ref %}
-              <a href="{{ post.ref | prepend: site.baseurl }}" class="fa fa-external-link-square"></a>
+              <a href="{{ post.ref | prepend: site.baseurl }}" class="entry-link fa fa-external-link-square"></a>
             {% endif %}
           </span>
         </p>

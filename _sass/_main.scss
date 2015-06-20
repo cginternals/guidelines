@@ -2,6 +2,8 @@
 
 /* Base Elements */
 
+
+body { color: #333333 }
 code { font-size: 1.1rem }
 
 /* Immutable Utilities */
@@ -44,11 +46,13 @@ $navbar-width: 19em;
 
 /* Color */
 
+.button { font-family: $heading-font-family }
+
 /* Components */
 
 $main-color: $sanjuan;
 $main-color-light: $mariner;
-$accent-color: $tacao;
+$accent-color: $jordyblue;
 
 .bg-main-color { background-color: $main-color }
 .bg-accent-color { background-color: $accent-color }
@@ -63,14 +67,32 @@ $accent-color: $tacao;
 
 .title {
   font-family: $font-family;
-  color: $tanhide;
+  color: $white;
 }
 
+.post-link {
+  color: $black;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($black, 15%);
+    text-decoration: none;
+  }
+}
 
 .guidelines-heading, .guidelines-entry {
   .links { visibility: hidden }
-  
-  &:hover {
+
+  &:hover, &:active {
     .links { visibility: visible };
+  }
+}
+
+.entry-link {
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+    text-decoration: none;
   }
 }

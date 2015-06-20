@@ -1,24 +1,22 @@
 ---
-layout: default
+layout: page
 title: Articles
 in_menu: yes
 ---
 
-<div class="home">
-  <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post">
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-        <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h2 post-title">{{ post.title }}</h3></a>
-        <p class="post-summary">
-          {% if post.summary %}
-            {{ post.summary }}
-          {% else %}
-            {{ post.excerpt }}
-          {% endif %}
-        </p>
-      </div>
-    {% endfor %}
+{% for post in paginator.posts %}
+  <div class="border-bottom mt3">
+    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+      <p class="mb0 gray"><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
+      <h2 class="mt0">{{ post.title }}</h2>
+      <p>
+        {% if post.summary %}
+          {{ post.summary }}
+        {% else %}
+          {{ post.excerpt }}
+        {% endif %}
+      </p>
+    </a>
   </div>
-  {% include pagination.html %}
-</div>
+{% endfor %}
+{% include pagination.html %}
