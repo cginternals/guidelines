@@ -7,14 +7,17 @@ in_menu: yes
 data: cpp_guidelines
 ---
 {% for category in site.data["cpp_guidelines"] %}
-  <div class="border-top border-aqua mb3 px1">
-    <h3 class="mt1" id="{{ category.id }}">{{ category.title }} <a href="#{{ category.id }}" class="fa fa-link"></a></h3>
+  <div class="border-top border-aqua mxn1 mb3 px1">
+    <h3 class="mt1" id="{{ category.id }}">
+      {{ category.title }} 
+      <!-- <a href="#{{ category.id }}" class="fa fa-link"></a> -->
+    </h3>
     {% for post in category.entries %}
       {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
       <div id="{{ post_id }}">
         <p>
           {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
-          <a href="#{{ post_id }}" class="fa fa-link"></a>
+          <!-- <a href="#{{ post_id }}" class="fa fa-link"></a> -->
           {% if post.ref %}
             <a href="" class="fa fa-external-link"></a>
           {% endif %}
