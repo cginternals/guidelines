@@ -12,7 +12,7 @@
       {% assign node_rm = node_url_parts | last %}
       {% assign node_base_url = node.url | replace: rm %}
       {% if node.in_menu and node_url_parts_size < 4 %}
-        {% if base_url contains node_base_url or (node.title == "Articles" and page.is_post) %}
+        {% if page.url == node.url or (node.title == "Articles" and (page.is_post or base_url contains node_base_url) %}
           {% assign active = true %}
           {% assign active_classes = "main-color bg-accent-color" %}
         {% else %}

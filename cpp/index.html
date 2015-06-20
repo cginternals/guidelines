@@ -14,7 +14,7 @@ data: cpp_guidelines
     </h3>
     {% for post in category.entries %}
       {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
-        <p class="guidelines-entry flex-auto border-bottom border-darken-2 sm-py1" id="{{ post_id }}">
+        <p class="guidelines-entry border-bottom border-darken-2 sm-py1" id="{{ post_id }}">
           {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
           <span class="links">
             <a href="#{{ post_id }}" class="entry-link fa fa-share-alt-square"></a>

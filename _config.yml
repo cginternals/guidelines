@@ -11,7 +11,7 @@ redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    "articles/:year/:month/:day/:title/"
 paginate:     5
-paginate_path: "/articles/page/:num/"
+paginate_path: "/articles/page/:num"
 sass:
   compressed: true
 
