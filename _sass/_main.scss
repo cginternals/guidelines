@@ -4,7 +4,29 @@
 
 
 body { color: #333333 }
+
 code { font-size: 1.1rem }
+
+pre { 
+  padding: 1.125em;
+  line-height: 1.11;
+  overflow-x: scroll;
+  margin-bottom: 0.88em;
+}
+
+blockquote { 
+  padding: 1.33em; 
+  font-style: italic; 
+  border-left: 5px solid #7a7a7a; 
+}
+
+blockquote footer { 
+  font-size: .85rem;
+  font-style: normal;
+  background-color: $white;
+  color: #7a7a7a;
+  border-color: transparent;
+}
 
 /* Immutable Utilities */
 
