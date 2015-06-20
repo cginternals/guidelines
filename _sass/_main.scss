@@ -2,9 +2,14 @@
 
 /* Base Elements */
 
+code { font-size: 1.1rem }
+
 /* Immutable Utilities */
 
 .heading-font { font-family: $heading-font-family }
+
+.small { font-size: 0.8em }
+.smaller { font-size: 0.6em }
 
 .touch-scroll { -webkit-overflow-scrolling: touch }
 
@@ -41,8 +46,31 @@ $navbar-width: 19em;
 
 /* Components */
 
+$main-color: $sanjuan;
+$main-color-light: $mariner;
+$accent-color: $tacao;
+
+.bg-main-color { background-color: $main-color }
+.bg-accent-color { background-color: $accent-color }
+
+.main-color { color: $main-color }
+.main-color-light { color: $main-color-light }
+.accent-color { color: $accent-color }
+
+.border-main-color { border-color: $main-color }
+.border-main-color-light { border-color: $main-color-light }
+.border-accent-color { border-color: $accent-color }
+
 .title {
   font-family: $font-family;
+  color: $tanhide;
 }
 
 
+.guidelines-heading, .guidelines-entry {
+  .links { visibility: hidden }
+  
+  &:hover {
+    .links { visibility: visible };
+  }
+}

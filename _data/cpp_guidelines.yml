@@ -80,7 +80,7 @@
       text: "For definition of a function signature: use additional const to indicate the implementation will not change the parameter."
     - id: 3
       text: "Follow the table of parameter passing."
-      ref: "2015-06-17-parameter-passing"
+      ref: "/2015/06/17/parameter-passing"
 
 - id: 5
   name: including_dependencies
