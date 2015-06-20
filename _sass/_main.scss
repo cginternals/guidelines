@@ -4,9 +4,9 @@
 
 /* Immutable Utilities */
 
-.heading-font {
-  font-family: $heading-font-family
-}
+.heading-font { font-family: $heading-font-family }
+
+.touch-scroll { -webkit-overflow-scrolling: touch }
 
 .overflow-x-hidden { overflow-x: hidden }
 .overflow-x-scroll { overflow-x: scroll }
