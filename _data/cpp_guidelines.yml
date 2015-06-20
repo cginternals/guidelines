@@ -6,8 +6,6 @@
       text: "Avoid method definitions (including empty) in `.h` files."
     - id: 1
       text: "As a default, put each type declaration for structs, classes, and enums in an extra header file."
-    - id: 2
-      text: "abcde­fghijklmnopqrstu­vwxyz­abcde­fghijklmnopqrstu­vwxyz­abcde­fgh"
 
 - id: 1
   name: code_formatting

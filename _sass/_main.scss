@@ -2,9 +2,11 @@
 
 /* Base Elements */
 
-
-
 /* Immutable Utilities */
+
+.heading-font {
+  font-family: $heading-font-family
+}
 
 .overflow-x-hidden { overflow-x: hidden }
 .overflow-x-scroll { overflow-x: scroll }
