@@ -10,7 +10,7 @@ data: cpp_guidelines
   <div class="border-top border-main-color-light mxn1 mb3 px1">
     <h3 class="guidelines-heading mt1" id="{{ category.id }}">
       {{ category.title }} 
-      <span class="links small"><a href="#{{ category.id }}" class="fa fa-share-alt-square "></a></span>
+      <span class="links small"><a href="#{{ category.id }}" class="entry-link fa fa-share-alt-square "></a></span>
     </h3>
     {% for post in category.entries %}
       {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
@@ -19,7 +19,7 @@ data: cpp_guidelines
           <span class="links">
             <a href="#{{ post_id }}" class="entry-link fa fa-share-alt-square"></a>
             {% if post.ref %}
-              <a href="{{ post.ref | prepend: site.baseurl }}" class="entry-link fa fa-external-link-square"></a>
+              <a href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}" class="entry-link fa fa-external-link-square"></a>
             {% endif %}
           </span>
         </p>

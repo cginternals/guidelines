@@ -2,20 +2,28 @@
 
 /* Base Elements */
 
+body { 
+  color: $black; 
+}
 
-body { color: #333333 }
-
-code { font-size: 1.1rem }
+code { 
+  color: lighten($black, 20%);
+  font-size: 1.1rem;
+}
 
 pre { 
   padding: 1.125em;
   line-height: 1.11;
   overflow-x: scroll;
   margin-bottom: 0.88em;
+
+  code {
+    font-size: 0.9rem;
+  }
 }
 
 blockquote { 
-  padding: 1.33em; 
+  padding: 0.8em; 
   font-style: italic; 
   border-left: 5px solid #7a7a7a; 
 }
@@ -26,6 +34,58 @@ blockquote footer {
   background-color: $white;
   color: #7a7a7a;
   border-color: transparent;
+}
+
+@media #{$breakpoint-sm} {
+  blockquote {
+    padding: 1.33em;
+  }
+}
+
+
+/*
+  Table styles copied from Bootstrap
+  Copyright (c) 2013 Twitter, Inc
+*/
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: 12px;
+        line-height: 1.2;
+        vertical-align: top;
+        border-top: 1px solid #333;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #333;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid #333;
+  }
 }
 
 /* Immutable Utilities */
@@ -74,7 +134,7 @@ $navbar-width: 19em;
 
 $main-color: $sanjuan;
 $main-color-light: $mariner;
-$accent-color: $jordyblue;
+$accent-color: $creamcan;
 
 .bg-main-color { background-color: $main-color }
 .bg-accent-color { background-color: $accent-color }

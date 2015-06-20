@@ -52,7 +52,7 @@
     - id: 0
       text: "Avoid using non-public inheritance."
     - id: 1
-      text: "As a default, make destructors destructors virtual."
+      text: "As a default, make destructors virtual."
     - id: 2
       text: "Consider making the public interface non-virtual."
     - id: 4

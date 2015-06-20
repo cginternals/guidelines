@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body class="bg-main-color">
-  {% include header.html %}
-  <div class="sm-ml-navbar">
-    <div role="main" class="container bg-white">
-      <div class="md-col-7 sm-p3 p2 mx-auto">
-        {{ content }}
-        {% include footer.html %}
+  <body>
+    {% include header.html %}
+    <div class="sm-ml-navbar">
+      <div role="main" class="container bg-white flex flex-column" style="min-height:100vh">
+        <div class="md-col-7 sm-p3 p2 mx-auto flex-auto">
+          {{ content }}
+        </div>
+        <div class="p2 mx-auto">
+          {% include footer.html %}
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
