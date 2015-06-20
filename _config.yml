@@ -2,7 +2,7 @@
 title:       C++ and GUI Development Guidelines
 email:       max.jendruk@student.hpi.de
 author:      hpicgs 
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "C++ and GUI programming guidelines of the Computer Graphics Systems Group at the Hasso Plattner Institute."
 baseurl:     "/guidelines"
 
 # Build settings
