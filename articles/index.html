@@ -5,7 +5,7 @@ in_menu: yes
 ---
 
 {% for post in paginator.posts %}
-  <div class="border-bottom mt3">
+  <section class="mt3 border-bottom">
     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
       <p class="mb0 gray"><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
       <h2 class="mt0">{{ post.title }}</h2>
@@ -17,6 +17,6 @@ in_menu: yes
         {% endif %}
       </p>
     </a>
-  </div>
+  </section>
 {% endfor %}
 {% include pagination.html %}

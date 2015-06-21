@@ -13,15 +13,15 @@ data: cpp_guidelines
       <span class="links small"><a href="#{{ category.id }}" class="entry-link fa fa-share-alt-square "></a></span>
     </h3>
       {% for post in category.entries %}
-        <div class="guidelines-entry flex flex-baseline border-bottom border-darken-2 mt3 sm-py1" id="{{ post_id }}">
+        <div class="flex flex-baseline mt3 sm-py1 border-bottom border-darken-2 guidelines-entry" id="{{ post_id }}">
         {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
           <p class="flex-auto">
             {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
           </p>
           <p class="links">
-            <a href="#{{ post_id }}" class="entry-link fa fa-share-alt-square"></a>
+            <a class="entry-link fa fa-share-alt-square" href="#{{ post_id }}"></a>
             {% if post.ref %}
-              <a href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}" class="entry-link fa fa-external-link-square"></a>
+              <a class="entry-link fa fa-external-link-square" href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}"></a>
             {% endif %}
           </p>
         </div>

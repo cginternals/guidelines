@@ -8,16 +8,18 @@ is_post: yes
 {% assign minutes = 1 %}
 {% endif %}
 
-<h1>{{ page.title }}</h1>
-<p class="gray">
-  <em>{{ page.date | date: "%b %-d, %Y" }}</em><br>
-  {% if page.update_date %}
-    <em>Updated: {{ page.update_date | date: "%b %-d, %Y" }}</em><br>
-  {% endif %}
-  <em>{{ minutes }} minute read</em>
-</p>
-<hr class="mxn1 mt2 border-main-color">
 
 <article>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p class="gray">
+      <em>{{ page.date | date: "%b %-d, %Y" }}</em><br>
+      {% if page.update_date %}
+        <em>Updated: {{ page.update_date | date: "%b %-d, %Y" }}</em><br>
+      {% endif %}
+      <em>{{ minutes }} minute read</em>
+    </p>
+  </header>
+  <hr class="mxn1 mt2 border-main-color">
   {{ content }}
 </article>

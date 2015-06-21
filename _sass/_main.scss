@@ -2,9 +2,7 @@
 
 /* Base Elements */
 
-body { 
-  color: $black; 
-}
+body { color: $black; }
 
 code { 
   color: lighten($black, 20%);
@@ -37,9 +35,7 @@ blockquote footer {
 }
 
 @media #{$breakpoint-sm} {
-  blockquote {
-    padding: 1.33em;
-  }
+  blockquote { padding: 1.33em }
 }
 
 
@@ -116,7 +112,6 @@ table {
 
 .touch-scroll { -webkit-overflow-scrolling: touch }
 
-
 .overflow-visible { overflow: visible; }
 
 .overflow-x-hidden { overflow-x: hidden }
@@ -149,9 +144,7 @@ table {
   .lg-fixed { position: fixed }
 }
 
-.valign-middle {
-  vertical-align: middle;
-}
+.valign-middle { vertical-align: middle; }
 
 /* Layout Modules */
 
@@ -163,10 +156,6 @@ $navbar-width: 19em;
 }
 
 /* Color */
-
-.button { font-family: $heading-font-family }
-
-/* Components */
 
 $main-color: $sanjuan;
 $main-color-light: $mariner;
@@ -183,10 +172,11 @@ $accent-color: $creamcan;
 .border-main-color-light { border-color: $main-color-light }
 .border-accent-color { border-color: $accent-color }
 
-.title {
-  font-family: $font-family;
-  color: $white;
-}
+.button { font-family: $heading-font-family }
+
+.title { font-family: $font-family; }
+
+/* Components */
 
 .post-link {
   color: $black;

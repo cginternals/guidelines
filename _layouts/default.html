@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-  <body ontouchstart="" class="overflow-y-auto">
+  <body ontouchstart="">
     <div class="sm-ml-navbar">
       {% include header.html %}
-      <div role="main" class="container bg-white flex flex-column" style="min-height:100vh">
-        <div class="col-12 sm-p3 p2 mx-auto flex-auto">
+      <main role="main" class="container flex flex-column bg-white" style="min-height:100vh">
+        <div class="flex-auto col-12 mx-auto sm-p3 p2 ">
           {{ content }}
         </div>
-        <div class="p2 mx-auto">
+        <div class="mx-auto p2">
           {% include footer.html %}
         </div>
-      </div>
+      </main>
     </div>
   </body>
 </html>

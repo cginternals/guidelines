@@ -4,7 +4,7 @@
 {% assign base_url = page.url | replace: rm %}
 
 <nav role="menu" class="caps">
-  <ul class="list-reset">
+  <ul class="flex flex-wrap list-reset">
     {% assign pages = site.pages | sort: 'weight'  %}
     {% for node in pages reversed %}
       {% assign node_url_parts = node.url | split: '/' %}
@@ -19,17 +19,20 @@
           {% assign active = false %}
           {% assign active_classes = "" %}
         {% endif %}
-        <li class>
-          <a class="sm-px3 px2 block button button-transparent {{ active_classes }}" 
+        <li class="col-12">
+          <a class="px2 sm-px3 block button button-transparent {{ active_classes }}" 
               href='{{ node.url | prepend: site.baseurl }}'>
               {{node.title}}
           </a>
         </li>
         {% if active and node.data != nil %}
-          <ul class="flex flex-wrap list-reset mb0">
+          <ul class="flex flex-wrap mb0 list-reset">
             {% for category in site.data[node.data] %}
               <li class="sm-col-12 col-6">
-                <a href="#{{ category.id }}" class="small sm-px4 px3 block button button-transparent">{{ category.title }}</a>
+                <a class="small sm-px4 px3 block button button-transparent" 
+                    href="#{{ category.id }}" >
+                  {{ category.title }}
+                </a>
               </li>
             {% endfor %}
           </ul>
