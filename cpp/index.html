@@ -7,23 +7,24 @@ in_menu: yes
 data: cpp_guidelines
 ---
 {% for category in site.data["cpp_guidelines"] %}
-  <div class="border-top border-main-color-light mxn1 mb3 px1">
+  <section class="border-top border-main-color-light mxn1 mb3 px1">
     <h3 class="guidelines-heading mt1" id="{{ category.id }}">
       {{ category.title }} 
       <span class="links small"><a href="#{{ category.id }}" class="entry-link fa fa-share-alt-square "></a></span>
     </h3>
-    {% for post in category.entries %}
-      {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
-        <p class="guidelines-entry border-bottom border-darken-2 sm-py1" id="{{ post_id }}">
-          {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
-          <span class="links">
+      {% for post in category.entries %}
+        <div class="guidelines-entry flex flex-baseline border-bottom border-darken-2 mt3 sm-py1" id="{{ post_id }}">
+        {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
+          <p class="flex-auto">
+            {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
+          </p>
+          <p class="links">
             <a href="#{{ post_id }}" class="entry-link fa fa-share-alt-square"></a>
             {% if post.ref %}
               <a href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}" class="entry-link fa fa-external-link-square"></a>
             {% endif %}
-          </span>
-        </p>
-    {% endfor %}
-    </ul>
-  </div>
+          </p>
+        </div>
+      {% endfor %}
+  </section>
 {% endfor %} 
