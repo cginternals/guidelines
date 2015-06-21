@@ -37,9 +37,11 @@
     - id: 4
       text: "Use lowercase for files containing solely includes, functions or type definitions."
     - id: 5
-      text: "Add `get` prefix to non-trivial getters and queries; omit from trivial getters."
+      text: "Add `get` prefix to non-trivial getters and queries; omit for trivial getters."
+      ref: "/2015/06/21/getter-setter-naming"
     - id: 6
       text: "Add `set` prefix to setters."
+      ref: "/2015/06/21/getter-setter-naming"
     - id: 7
       text: "Add `m_` prefix to member variables, `s_` to static member variables, `t_` to thread-local variables, and `g_` to global variables."
     - id: 8
@@ -104,15 +106,17 @@
   title: Implementation Design
   entries:
     - id: 0
-      text: "Use guard clauses where applicable."
+      text: "Use [guard clauses](https://sourcemaking.com/refactoring/replace-nested-conditional-with-guard-clauses) where applicable."
     - id: 1
       text: "Explicitly state assertions."
     - id: 2
       text: "Use C++ style casts (static, dynamic, reinterpret)."
     - id: 3
       text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`, consider right-hand style)."
+      ref: "/2015/06/21/almost-always-auto"
     - id: 4
       text: "Prefer the standard template library (especially the Algorithms library) over custom code."
+      ref: "/2015/06/21/standard-template-library"
     - id: 5
       text: "Make use of suffix literals."
     - id: 6
@@ -155,6 +159,7 @@
       text: "Use `override` for overridden methods, omit redundant virtual ."
     - id: 1
       text: "Use `auto` where applicable (see right-hand style)."
+      ref: "/2015/06/21/almost-always-auto"
     - id: 2
       text: "Avoid `mutable`."
     - id: 3
@@ -196,7 +201,7 @@
     - id: 1
       text: "Use `WIN32`, `__APPLE__` and the else clause for Linux to dispatch platform dependent code."
     - id: 2
-      text: "Always include respective c standard library headers (use e.g. `#include <cmath>`)."
+      text: "Always include respective c standard library headers (use [c-prefixed includes](http://www.cplusplus.com/reference/clibrary/), e.g., `#include <cmath>`)."
 
 - id: 11
   name: library_design
@@ -237,7 +242,7 @@
     - id: 2
       text: "Use princrementation as default."
     - id: 3
-      text: "Consider return value optimization."
+      text: "Consider [return value optimization](https://en.wikipedia.org/wiki/Return_value_optimization)."
     - id: 4
       text: "Prefer to perform costly operations lazy."
     - id: 5

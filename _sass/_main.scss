@@ -88,6 +88,25 @@ table {
   }
 }
 
+.table-vertical-border {
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-right: 1px solid #333;
+      }
+      > th:last-child,
+      > td:last-child {
+        border-right: none;
+      }
+      > .table-border-right {
+        border-right: 1px solid #333 !important;
+      }
+    }
+  }
+}
+
 /* Immutable Utilities */
 
 .heading-font { font-family: $heading-font-family }
@@ -115,6 +134,10 @@ table {
 
 @media #{$breakpoint-lg} {
   .lg-fixed { position: fixed }
+}
+
+.valign-middle {
+  vertical-align: middle;
 }
 
 /* Layout Modules */

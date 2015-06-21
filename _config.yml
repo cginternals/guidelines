@@ -6,9 +6,7 @@ description: "C++ and GUI programming guidelines of the Computer Graphics System
 baseurl:     "/guidelines"
 
 # Build settings
-markdown:     redcarpet
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
+markdown:     kramdown
 permalink:    "articles/:year/:month/:day/:title/"
 paginate:     5
 paginate_path: "/articles/page/:num"
