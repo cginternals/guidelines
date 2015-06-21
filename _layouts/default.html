@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-  <body>
-    {% include header.html %}
+  <body class="overflow-y-auto">
     <div class="sm-ml-navbar">
+      {% include header.html %}
       <div role="main" class="container bg-white flex flex-column" style="min-height:100vh">
         <div class="col-12 sm-p3 p2 mx-auto flex-auto">
           {{ content }}

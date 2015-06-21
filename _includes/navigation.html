@@ -3,7 +3,7 @@
 {% assign rm = url_parts | last %}
 {% assign base_url = page.url | replace: rm %}
 
-<nav class="caps">
+<nav role="menu" class="caps">
   <ul class="list-reset">
     {% assign pages = site.pages | sort: 'weight'  %}
     {% for node in pages reversed %}
