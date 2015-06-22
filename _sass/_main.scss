@@ -2,7 +2,7 @@
 
 /* Base Elements */
 
-body { color: $black; }
+body { color: $black }
 
 code { 
   color: lighten($black, 20%);
@@ -172,9 +172,14 @@ $accent-color: $creamcan;
 .border-main-color-light { border-color: $main-color-light }
 .border-accent-color { border-color: $accent-color }
 
-.button { font-family: $heading-font-family }
+.button { 
+  font-family: $heading-font-family;
+  // text-transform: uppercase;
+}
 
-.title { font-family: $font-family; }
+.title { font-weight: 300 }
+
+.menu-button { font-weight: 400 }
 
 /* Components */
 

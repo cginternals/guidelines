@@ -20,7 +20,7 @@
           {% assign active_classes = "" %}
         {% endif %}
         <li class="col-12">
-          <a class="px2 sm-px3 block button button-transparent {{ active_classes }}" 
+          <a class="px2 sm-px3 block button button-transparent menu-button {{ active_classes }}" 
               href='{{ node.url | prepend: site.baseurl }}'>
               {{node.title}}
           </a>
@@ -29,7 +29,7 @@
           <ul class="flex flex-wrap mb0 list-reset">
             {% for category in site.data[node.data] %}
               <li class="sm-col-12 col-6">
-                <a class="small sm-px4 px3 block button button-transparent" 
+                <a class="small sm-px4 px3 block button button-transparent menu-button" 
                     href="#{{ category.id }}" >
                   {{ category.title }}
                 </a>
