@@ -20,7 +20,7 @@ data: cpp_guidelines
           <div class="flex-none mr1">
             {{ post_id }}
           </div>
-          <div class="flex-grow">
+          <div class="flex-auto">
             <p class="mb0">
               <label for="{{ post_id }}">{{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}</label>
             </p>
