@@ -6,24 +6,32 @@ weight: 1
 in_menu: yes
 data: cpp_guidelines
 ---
-{% for category in site.data["cpp_guidelines"] %}
+{% assign categories = site.data["cpp_guidelines"] %}
+{% assign num_categories = categories | size %}
+{% for category in categories %}
   <section class="border-top border-main-color-light mxn1 mb3 px1">
     <h3 class="guidelines-heading mt1" id="{{ category.id }}">
-      {{ category.title }} 
+      {{ category.id }} {{ category.title }} 
       <span class="links small"><a href="#{{ category.id }}" class="entry-link fa fa-share-alt-square "></a></span>
     </h3>
       {% for post in category.entries %}
-        <div class="flex flex-baseline mt3 sm-py1 border-bottom border-darken-2 guidelines-entry" id="{{ post_id }}">
+        <div class="flex flex-baseline mt3 sm-py1 guidelines-entry" id="{{ post_id }}">
         {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
-          <p class="flex-auto">
-            {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
-          </p>
-          <p class="links">
+          <div class="flex-none mr1">
+            {{ post_id }}
+          </div>
+          <div>
+            <p class="flex-grow mb0">
+              <label for="{{ post_id }}">{{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}</label>
+            </p>
+            <input readonly class="mxn1 block full-width field-link js-select-all" id="{{ post_id }}" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
+          </div>
+         <!--  <p>
             <a class="entry-link fa fa-share-alt-square" href="#{{ post_id }}"></a>
             {% if post.ref %}
               <a class="entry-link fa fa-external-link-square" href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}"></a>
             {% endif %}
-          </p>
+          </p> -->
         </div>
       {% endfor %}
   </section>

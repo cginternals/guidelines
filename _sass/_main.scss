@@ -146,6 +146,10 @@ table {
 
 .valign-middle { vertical-align: middle; }
 
+.p0  { padding:       0 }
+.py0 { padding-top:   0; padding-bottom: 0 }
+.px0 { padding-left:  0; padding-right:  0 }
+
 /* Layout Modules */
 
 $navbar-width: 19em;
@@ -172,9 +176,24 @@ $accent-color: $creamcan;
 .border-main-color-light { border-color: $main-color-light }
 .border-accent-color { border-color: $accent-color }
 
-.button { 
+.button { font-family: $heading-font-family }
+
+.field-link {
+  color: $silver;
+  border-style: none;
+  font-size: 0.75em;
   font-family: $heading-font-family;
-  // text-transform: uppercase;
+  background-color: white;
+}
+
+.field-link::-moz-selection { /* Code for Firefox */
+    color: $white;
+    background: $main-color-light;
+}
+
+.field-link::selection {
+    color: $white ;
+    background: $main-color-light;
 }
 
 .title { font-weight: 300 }

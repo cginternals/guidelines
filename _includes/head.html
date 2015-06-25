@@ -8,6 +8,10 @@
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <!-- Javascript -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{ "/javascript/main.js" | prepend: site.baseurl }}"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/styles.css" | prepend: site.baseurl }}" type="text/css">
 
@@ -15,9 +19,6 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Lato:300,400,700,300italic,400italic,700italic|Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="{{ "/fonts/stylesheet.css" | prepend: site.baseurl }}" type="text/css">
-
 
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
