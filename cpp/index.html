@@ -20,8 +20,8 @@ data: cpp_guidelines
           <div class="flex-none mr1">
             {{ post_id }}
           </div>
-          <div>
-            <p class="flex-grow mb0">
+          <div class="flex-grow">
+            <p class="mb0">
               <label for="{{ post_id }}">{{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}</label>
             </p>
             <input readonly class="mxn1 block full-width field-link js-select-all" id="{{ post_id }}" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
