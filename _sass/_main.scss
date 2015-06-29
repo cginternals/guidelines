@@ -150,6 +150,8 @@ table {
 .py0 { padding-top:   0; padding-bottom: 0 }
 .px0 { padding-left:  0; padding-right:  0 }
 
+.cursor-pointer { cursor: pointer }
+
 /* Layout Modules */
 
 $navbar-width: 19em;
@@ -192,7 +194,7 @@ $accent-color: $creamcan;
 }
 
 .field-link::selection {
-    color: $white ;
+    color: $white;
     background: $main-color-light;
 }
 
@@ -202,21 +204,13 @@ $accent-color: $creamcan;
 
 /* Components */
 
-.post-link {
+.unobstrusive-link {
   color: $black;
   text-decoration: none;
 
   &:hover {
     color: lighten($black, 15%);
     text-decoration: none;
-  }
-}
-
-.guidelines-heading, .guidelines-entry {
-  .links { visibility: hidden }
-
-  &:hover, &:active {
-    .links { visibility: visible };
   }
 }
 

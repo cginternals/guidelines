@@ -11,8 +11,9 @@ data: cpp_guidelines
 {% for category in categories %}
   <section class="border-top border-main-color-light mxn1 mb3 px1">
     <h3 class="guidelines-heading mt1" id="{{ category.id }}">
-      {{ category.id }} {{ category.title }} 
-      <span class="links small"><a href="#{{ category.id }}" class="entry-link fa fa-share-alt-square "></a></span>
+      <a href="#{{ category.id }}" class="unobstrusive-link">
+        {{ category.id }} {{ category.title }} 
+      </a>
     </h3>
       {% for post in category.entries %}
         <div class="flex flex-baseline mt3 sm-py1 guidelines-entry" id="{{ post_id }}">
@@ -22,9 +23,11 @@ data: cpp_guidelines
           </div>
           <div class="flex-auto">
             <p class="mb0">
-              <label for="{{ post_id }}">{{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}</label>
+              <label for="{{ post_id }}" class="cursor-pointer">
+                {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
+              </label>
             </p>
-            <input readonly class="mxn1 block full-width field-link js-select-all" id="{{ post_id }}" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
+            <input readonly class="mxn1 block full-width field-link cursor-pointer js-select-all" id="{{ post_id }}" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
           </div>
          <!--  <p>
             <a class="entry-link fa fa-share-alt-square" href="#{{ post_id }}"></a>
