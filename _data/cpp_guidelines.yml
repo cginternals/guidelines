@@ -50,7 +50,7 @@
     - id: 1
       text: "As a default, use public inheritance."
     - id: 3
-      text: "Consider making the public interface non-virtual."
+      text: "Consider making the [public interface non-virtual](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Non-Virtual_Interface)."
     - id: 4
       text: "Avoid virtual inheritance."
     - id: 5
@@ -60,7 +60,8 @@
     - id: 8
       text: "Don't use nested classes in a public interface. (They cannot be forward declared.)"
     - id: 9
-      text: "Adhere to the given declaration order (i.e. member variables last …)."
+      text: "Adhere to the given declaration order."
+      ref: "/2015/06/30/declaration-order/"
 
 - id: 5
   name: designing_interface_signatures
