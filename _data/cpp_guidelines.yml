@@ -3,9 +3,9 @@
   title: Code Arrangement
   entries:
     - id: 1
-      text: "Avoid method definitions (including empty) in `.h` files."
+      text: "Don't put method definitions (including empty) in `.h` files."
     - id: 2
-      text: "As a default, put each type declaration for structs, classes, and enums in an extra header file."
+      text: "Put each class declaration in an extra `.h` file."
 
 - id: 2
   name: code_formatting
@@ -14,12 +14,10 @@
     - id: 1
       text: "Use `UTF-8` encoding for all source files."
     - id: 2
-      text: "Indent code by `4` spaces."
+      text: "Indent code by `4` spaces (no tabs)."
     - id: 3
-      text: "Place curly braces on succeeding line without indentation."
-    - id: 4
       text: "Use `<` and `>` for external libraries as well as local public includes."
-    - id: 5
+    - id: 4
       text: "Be consistent within your own code and the project's code that you are working on."
 
 - id: 3 
@@ -27,46 +25,40 @@
   title: Type Naming
   entries:
     - id: 1
-      text: "Classes and Enums are named using CamelCase."
+      text: "Use [CamelCase](http://en.wikipedia.org/wiki/CamelCase) for class and enum names."
     - id: 2
-      text: "Abstract classes have the `Abstract` prefix."
+      text: "Use [CamelCase](http://en.wikipedia.org/wiki/CamelCase) beginning with a lowercase letter for function and method names."
     - id: 3
-      text: "Interfaces should be indistinguishable from normal abstract classes."
+      text: "Start names of classes having pure virtual methods with `Abstract`."
     - id: 4
       text: "Use [CamelCase](http://en.wikipedia.org/wiki/CamelCase) for files containing structs, classes, or enums."
     - id: 5
-      text: "Use lowercase for files containing solely includes, functions or type definitions."
-    - id: 6
-      text: "Add `get` prefix to non-trivial getters and queries; omit for trivial getters."
+      text: "Omit prefixes (e.g., `get`) for getters."
       ref: "/2015/06/21/getter-setter-naming"
-    - id: 7
+    - id: 6
       text: "Add `set` prefix to setters."
       ref: "/2015/06/21/getter-setter-naming"
-    - id: 8
+    - id: 7
       text: "Add `m_` prefix to member variables, `s_` to static member variables, `t_` to thread-local variables, and `g_` to global variables."
-    - id: 9
-      text: "Avoid these prefixes on local variables and formal parameters."
+    - id: 8
+      text: "Don't add prefixes to local variables and [formal parameters](http://stackoverflow.com/a/18870232)."
 
 - id: 4
   name: designing_classes
   title: Designing Classes
   entries:
     - id: 1
-      text: "Avoid using non-public inheritance."
-    - id: 2
-      text: "As a default, make destructors virtual."
+      text: "As a default, use public inheritance."
     - id: 3
       text: "Consider making the public interface non-virtual."
     - id: 4
       text: "Avoid virtual inheritance."
     - id: 5
       text: "Avoid friend declarations."
-    - id: 6
-      text: "Make copy constructors explicit if implicit conversion is not intended."
     - id: 7
-      text: "Use `class` for structures with behavior, `struct` for simple structures (PODs)."
+      text: "Use `struct` for Plain Old Data structors ([POD](https://de.wikipedia.org/wiki/Plain_Old_Data_structure)), `class` when using object-oriented features."
     - id: 8
-      text: "Don't use inner classes in a public interface."
+      text: "Don't use nested classes in a public interface. (They cannot be forward declared.)"
     - id: 9
       text: "Adhere to the given declaration order (i.e. member variables last …)."
 
@@ -75,30 +67,22 @@
   title: Designing Interface Signatures
   entries:
     - id: 1
-      text: "Create explicit methods for optional parameters."
-    - id: 2
-      text: "For declaration of function signature: use `const` to indicate parameters that may change but will not from the viewport of the caller."
-    - id: 3
-      text: "For definition of a function signature: use additional const to indicate the implementation will not change the parameter."
-    - id: 4
       text: "Follow the table of parameter passing."
       ref: "/2015/06/17/parameter-passing"
+    - id: 2
+      text: "Declare member functions that do not change the member variables `const`."
 
 - id: 6
   name: including_dependencies
   title: Include Dependencies
   entries:
     - id: 1
-      text: "Use forward declarations where applicable."
+      text: "Almost always use forward declarations."
     - id: 2
-      text: "Never use forward declarations for the following libraries: STL, glm (use `glm/fwd.hpp` and `iosfwd` instead)."
+      text: "Avoid use forward declarations for the following libraries: STL, glm (use `glm/fwd.hpp` and `iosfwd` instead)."
     - id: 3
-      text: "Include order for `.h`: stdlib, glm, Qt, hpicgs libraries, own headers."
+      text: "Adhere to the following include order: corresponding header (if applicable), std headers, low-level third-party headers, high-level third-party headers, local headers."
     - id: 4
-      text: "Include order for `.cpp`: Corresponding header, then the same as `.h`."
-    - id: 5
-      text: "Include order for `.hpp`: Corresponding header, then the same as `.h`."
-    - id: 6
       text: "Use `#pragma once` instead of `#define` guards."
 
 - id: 7
@@ -108,9 +92,9 @@
     - id: 1
       text: "Use [guard clauses](https://sourcemaking.com/refactoring/replace-nested-conditional-with-guard-clauses) where applicable."
     - id: 2
-      text: "Explicitly state assertions."
+      text: "Use assertions as a means to protect against self-induced programming mistakes."
     - id: 3
-      text: "Use C++ style casts (static, dynamic, reinterpret)."
+      text: "Use C++ style casts (static, dynamic, reinterpret) for class pointers, prefer for primitive data types."
     - id: 4
       text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`, consider right-hand style)."
       ref: "/2015/06/21/almost-always-auto"
@@ -143,7 +127,8 @@
     - id: 2
       text: "Add class comments."
     - id: 3
-      text: "Use ToDo comments for code that is temporary, a short-term solution, or good-enough but not perfect (Form: `// ToDo(<name|email|github>) <description>`)."
+      text: "Use ToDo comments for code that is temporary, a short-term solution, or good-enough but not perfect. 
+        (Form: `// ToDo(<name|email|github>) <description>`)"
     - id: 4
       text: "Add comments in tricky, non-obvious, interesting, or important parts of your implementation code."
     - id: 5
@@ -230,6 +215,8 @@
       text: "Don't use iterators into resized vectors."
     - id: 5
       text: "Avoid allocating container classes on the heap."
+    - id: 6
+      text: "Make destructors of base classes virtual."
 
 - id: 14
   name: performance_considerations
@@ -253,7 +240,7 @@
   title: Miscellaneous
   entries:
     - id: 1
-      text: "Check your design if you make heavily use of down casts. It is often a sign of bad design."
+      text: "Check your design if you make heavy use of down casts. It is often a sign of bad design."
     - id: 2
       text: "Prefer nonmember functions for symmetric operators."
     - id: 3
