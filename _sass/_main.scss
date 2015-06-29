@@ -231,3 +231,7 @@ $accent-color: $creamcan;
 .webkit-scrollbar::-webkit-scrollbar-thumb {
   background: darken($main-color, 10%);
 }
+
+.code-nobreak code {
+  white-space: nowrap;
+}

@@ -22,19 +22,14 @@ data: cpp_guidelines
             {{ post_id }}
           </div>
           <div class="flex-auto">
-            <p class="mb0">
-              <label for="{{ post_id }}" class="cursor-pointer">
-                {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
-              </label>
+            <p class="code-nobreak mb0">
+              {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
+              {% if post.ref %}
+                <a class="unobstrusive-link fa fa-info-circle" href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}"></a>
+              {% endif %}
             </p>
-            <input readonly class="mxn1 block full-width field-link cursor-pointer js-select-all" id="{{ post_id }}" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
+            <input readonly style="width: 22em" class="mxn1 fit field-link cursor-pointer js-select-all" type="text" value="{{ post_id | prepend: "/cpp/#" | prepend: site.baseurl | prepend: "http://hpicgs.github.io" }}">
           </div>
-         <!--  <p>
-            <a class="entry-link fa fa-share-alt-square" href="#{{ post_id }}"></a>
-            {% if post.ref %}
-              <a class="entry-link fa fa-external-link-square" href="{{ post.ref | prepend: "/articles" | prepend: site.baseurl }}"></a>
-            {% endif %}
-          </p> -->
         </div>
       {% endfor %}
   </section>
