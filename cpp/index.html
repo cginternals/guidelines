@@ -16,11 +16,9 @@ data: cpp_guidelines
       </a>
     </h3>
       {% for post in category.entries %}
-        <div class="flex flex-baseline mt3 sm-py1 guidelines-entry" id="{{ post_id }}">
         {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
-          <div class="flex-none mr1">
-            {{ post_id }}
-          </div>
+        <div class="flex flex-baseline mt3 sm-py1 guidelines-entry" id="{{ post_id }}">
+          <div class="flex-none mr1">{{ post_id }}</div>
           <div class="flex-auto">
             <p class="code-nobreak mb0">
               {{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}
