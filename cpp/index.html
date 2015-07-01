@@ -9,7 +9,7 @@ data: cpp_guidelines
 {% assign categories = site.data["cpp_guidelines"] %}
 {% assign num_categories = categories | size %}
 {% for category in categories %}
-  <section class="border-top border-main-color-light mxn1 mb3 px1">
+  <section class="mxn1 mt2 mb2 px1">
     <h3 class="guidelines-heading mt1" id="{{ category.id }}">
       <a href="#{{ category.id }}" class="unobstrusive-link">
         {{ category.id }} {{ category.title }} 
@@ -17,7 +17,7 @@ data: cpp_guidelines
     </h3>
       {% for post in category.entries %}
         {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
-        <div class="flex flex-baseline mt3 sm-py1 guidelines-entry" id="{{ post_id }}">
+        <div class="flex flex-baseline sm-py1 guidelines-entry" id="{{ post_id }}">
           <div class="flex-none mr1">{{ post_id }}</div>
           <div class="flex-auto">
             <p class="code-nobreak mb0">
