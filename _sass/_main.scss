@@ -107,7 +107,13 @@ table {
 .heading-font { font-family: $heading-font-family }
 
 .small { font-size: 0.8em }
-.smaller { font-size: 0.6em }
+.smaller { font-size: 0.7em }
+
+@media #{$breakpoint-md} {
+  .md-small { font-size: 0.8em }
+  .md-smaller { font-size: 0.7em }
+}
+
 
 .touch-scroll { -webkit-overflow-scrolling: touch }
 
@@ -137,10 +143,12 @@ table {
 
 @media #{$breakpoint-md} {
   .md-fixed { position: fixed }
+  .md-absolute { position: absolute }
 }
 
 @media #{$breakpoint-lg} {
   .lg-fixed { position: fixed }
+  .lg-absolute { position: absolute }
 }
 
 .valign-middle { vertical-align: middle; }
@@ -155,9 +163,9 @@ table {
 
 $navbar-width: 19em;
 
-@media #{$breakpoint-sm} {
-  .sm-w-navbar { width: $navbar-width }
-  .sm-ml-navbar { margin-left: $navbar-width }
+@media #{$breakpoint-md} {
+  .md-w-navbar { width: $navbar-width }
+  .md-ml-navbar { margin-left: $navbar-width }
 }
 
 /* Color */
@@ -184,6 +192,7 @@ $accent-color: $creamcan;
   border-style: none;
   font-size: 0.75em;
   font-family: $heading-font-family;
+  width: 24em;
   background-color: white;
 }
 
@@ -229,8 +238,4 @@ $accent-color: $creamcan;
 
 .webkit-scrollbar::-webkit-scrollbar-thumb {
   background: darken($main-color, 10%);
-}
-
-.code-nobreak code {
-  white-space: nowrap;
 }

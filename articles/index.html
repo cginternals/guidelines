@@ -7,7 +7,6 @@ in_menu: yes
 {% for post in paginator.posts %}
   <section class="mt3 border-bottom">
     <a class="unobstrusive-link" href="{{ post.url | prepend: site.baseurl }}">
-      <p class="mb0 gray"><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
       <h2 class="mt0">{{ post.title }}</h2>
       <p>
         {% if post.summary %}
