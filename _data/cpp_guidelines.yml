@@ -91,33 +91,39 @@
   title: Implementation Design
   entries:
     - id: 1
-      text: "Use [guard clauses](https://sourcemaking.com/refactoring/replace-nested-conditional-with-guard-clauses) where applicable."
+      text: "Prefer [guard clauses](https://sourcemaking.com/refactoring/replace-nested-conditional-with-guard-clauses) over nested conditionals."
     - id: 2
       text: "Use assertions as a means to protect against self-induced programming mistakes."
     - id: 3
       text: "Use C++ style casts (static, dynamic, reinterpret) for class pointers, prefer for primitive data types."
     - id: 4
-      text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`, consider right-hand style)."
-      ref: "/2015/06/21/almost-always-auto"
+      text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`)."
     - id: 5
-      text: "Prefer the standard template library (especially the Algorithms library) over custom code."
+      text: "Prefer the standard template library (especially the algorithms library) over custom code."
       ref: "/2015/06/21/standard-template-library"
     - id: 6
       text: "Make use of suffix literals."
     - id: 7
-      text: "Prefer iterators over index based access."
+      text: "Prefer range-based for loops over iterators over index based access."
     - id: 8
-      text: "Prefer range-based for loops."
-    - id: 9
       text: "Avoid owning raw pointers, new and delete (Smart pointers are the default)."
+      ref: "/2015/07/23/owning-and-non-owning-raw-pointers"
+    - id: 9
+      text: "Use non-owning raw `*` and `&` for parameters and return values."
+      ref: "/2015/07/23/owning-and-non-owning-raw-pointers"
     - id: 10
-      text: "Use non-owning raw `*` and `&` especially for parameters."
-    - id: 11
       text: "When passing pointers, handle passing a `nullptr`."
-    - id: 12
+    - id: 11
       text: "Declare constant variables `const`."
-    - id: 13
+      ref: "/2015/07/23/const-variable-declaration"
+    - id: 12
       text: "Prefer small and focused functions."
+    - id: 13
+      text: "Do not nest lambdas."
+    - id: 14
+      text: "Avoid `mutable`."
+    - id: 15
+      text: "No `using namespace` in header files."
 
 - id: 8
   name: comment_style
@@ -125,49 +131,47 @@
   entries:
     - id: 1
       text: "Follow the comment style guidelines specific to the project."
+      ref: "/2015/07/23/comment-style-guide"
     - id: 2
-      text: "Add class comments."
+      text: "When creating new class files, use [this template](/resources/template-header-file.h)"
     - id: 3
-      text: "Use ToDo comments for code that is temporary, a short-term solution, or good-enough but not perfect. 
-        (Form: `// ToDo(<name|email|github>) <description>`)"
+      text: "Always add class and public member comments."
     - id: 4
-      text: "Add comments in tricky, non-obvious, interesting, or important parts of your implementation code."
+      text: "Use ToDo comments for code that is temporary, a short-term solution, or good-enough but not perfect. 
+        (Form: `// ToDo <description>`)"
     - id: 5
-      text: "Do not describe the code; assume that the person reading the code knows C++ better than you do."
+      text: "Add comments in tricky, non-obvious, interesting, or important parts of your implementation code."
     - id: 6
-      text: "Eventually remove commented code; we use version control systems."
+      text: "Do not restate code in comments."
+    - id: 7
+      text: "Do not use commenting out as a mean to archive code; we use version control systems."
 
 - id: 9
   name: general_cpp11_features
   title: General C++11 Features
   entries:
     - id: 1
-      text: "Use `override` for overridden methods, omit redundant virtual ."
+      text: "Use `override` for overridden methods."
     - id: 2
       text: "Use `auto` where applicable (see right-hand style)."
       ref: "/2015/06/21/almost-always-auto"
     - id: 3
-      text: "Avoid `mutable`."
-    - id: 4
       text: "Capture variables in lambdas explicitly."
-    - id: 5
+    - id: 4
       text: "Use enum classes and specify underlying type."
+    - id: 5
+      text: "Use `= delete` as a mean to remove auto generated class methods."
     - id: 6
-      text: "Use `= delete` and `= default` where applicable (hint: can also be used in definition)."
-    - id: 7
-      text: "Prefer `= default` over empty methods."
-    - id: 8
       text: "Use `using` instead of `typedef`."
-    - id: 9
+    - id: 7
       text: "Use uniform initialization except for container constructors where you don't want to pass elements."
+      ref: "/2015/06/21/uniform-initialization"
+    - id: 8
+      text: "Use `std::array` instead of c arrays."
+    - id: 9
+      text: "Don't use constant expressions (`constexpr`) as they are not fully supported yet by all compilers."
     - id: 10
-      text: "Know how to view deduced types."
-    - id: 11
-      text: "Use `std::array` instead of c arrays (also for multi-dimensional arrays)."
-    - id: 12
-      text: "Don't use constant expressions as they are not fully supported yet by all compilers."
-    - id: 13
-      text: "Use `nullptr` for null pointers, `0` for numbers; avoid `NULL` altogether."
+      text: "Use `nullptr` for null pointers, `0` for numbers; never use `NULL`."
 
 - id: 10
   name: templates
@@ -183,23 +187,19 @@
   title: Cross-platform Compatibility
   entries:
     - id: 1
-      text: "Assure all Dependencies are available cross-platform."
+      text: "Assure all dependencies are available cross-platform."
     - id: 2
-      text: "Use `WIN32`, `__APPLE__` and the else clause for Linux to dispatch platform dependent code."
+      text: "Always use [c-prefixed includes](http://www.cplusplus.com/reference/clibrary/) for C standard library headers (e.g., `#include <cmath>`)."
     - id: 3
-      text: "Always include respective c standard library headers (use [c-prefixed includes](http://www.cplusplus.com/reference/clibrary/), e.g., `#include <cmath>`)."
+      text: "Separate complex platform specific code into files and select them via the build system."
 
 - id: 12
   name: library_design
   title: Library Design
   entries:
     - id: 1
-      text: "Export only public classes, structs and functions (`<library uppercase name>_API`)."
-    - id: 2
-      text: "Don't export templates and enums (it is illegal anyway)."
-    - id: 3
       text: "Public headers belong in `source/<library name>/include/<library name>/`."
-    - id: 4
+    - id: 2
       text: "Private headers belong in `source/<library name>/source/`."
 
 - id: 13
@@ -207,17 +207,20 @@
   title: Common Mistakes
   entries:
     - id: 1
-      text: "`std::function` is not the type of lambdas, it's a wrapper."
+      text: "Use `auto` capture lambdas (`std::function` is a functor wrapper not its type.)"
     - id: 2
-      text: "`dynamic_cast` is not the default for class up casts; if you know the type, use `static_cast`."
+      text: "`dynamic_cast` is not the default for down casts; if you know the type, use `static_cast`."
     - id: 3
-      text: "C++ is not Java; Use stack memory to initialize concrete types."
+      text: "Be aware that resizing `std::vector`s invalidates iterators."
+      ref: "2015/07/23/validity-of-iterators"
     - id: 4
-      text: "Don't use iterators into resized vectors."
-    - id: 5
       text: "Avoid allocating container classes on the heap."
-    - id: 6
+    - id: 5
       text: "Make destructors of base classes virtual."
+    - id: 6
+      text: "Export only public classes, structs and, functions (`<library uppercase name>_API`)."
+    - id: 7
+      text: "Don't export templates and enums (it is illegal anyway)."
 
 - id: 14
   name: performance_considerations
@@ -226,23 +229,19 @@
     - id: 1
       text: "Avoid continous heap memory allocations in large loops."
     - id: 2
-      text: "Inline methods and functions only after performance measurements."
+      text: "Inline methods and functions only after profiling."
     - id: 3
-      text: "Use princrementation as default."
+      text: "Use pre-incrementation as default."
     - id: 4
       text: "Consider [return value optimization](https://en.wikipedia.org/wiki/Return_value_optimization)."
     - id: 5
       text: "Prefer to perform costly operations lazy."
     - id: 6
-      text: "Prefer `std::vector` as your default container."
+      text: "Make `std::vector` your favorite container type."
 
 - id: 15
   name: miscellaneous
   title: Miscellaneous
   entries:
     - id: 1
-      text: "Check your design if you make heavy use of down casts. It is often a sign of bad design."
-    - id: 2
-      text: "Prefer nonmember functions for symmetric operators."
-    - id: 3
-      text: "No `using namespace` in header files."
+      text: "Check your design for heavy use of down casts. It indicates bad design."
