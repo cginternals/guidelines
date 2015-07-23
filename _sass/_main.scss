@@ -210,6 +210,12 @@ $accent-color: $creamcan;
 
 .menu-button { font-weight: 400 }
 
+.scroll-to-top-button { font-size: 1.6em }
+
+@media #{$breakpoint-sm} {
+  .scroll-to-top-button { font-size: 2em }
+}
+
 /* Components */
 
 .unobstrusive-link {
@@ -218,15 +224,6 @@ $accent-color: $creamcan;
 
   &:hover {
     color: lighten($black, 15%);
-    text-decoration: none;
-  }
-}
-
-.entry-link {
-  text-decoration: none;
-
-  &:hover {
-    color: lighten($link-color, 10%);
     text-decoration: none;
   }
 }
