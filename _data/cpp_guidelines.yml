@@ -110,12 +110,12 @@
       ref: "/2015/07/23/owning-and-non-owning-raw-pointers"
     - id: 9
       text: "Use non-owning raw `*` and `&` for parameters and return values."
-      ref: "/2015/07/23/owning-and-non-owning-raw-pointers"
+      ref: "/2015/07/24/owning-and-non-owning-raw-pointers/"
     - id: 10
       text: "When passing pointers, handle passing a `nullptr`."
     - id: 11
       text: "Declare constant variables `const`."
-      ref: "/2015/07/23/const-variable-declaration"
+      ref: "/2015/07/24/const-type-qualifier"
     - id: 12
       text: "Prefer small and focused functions."
     - id: 13
@@ -131,9 +131,9 @@
   entries:
     - id: 1
       text: "Follow the comment style guidelines specific to the project."
-      ref: "/2015/07/23/comment-style-guide"
+      ref: "/2015/07/24/comment-style-guide"
     - id: 2
-      text: "When creating new class files, use [this template](/resources/template-header-file.h)"
+      text: "When creating new class files, use [this template](/guidelines/resources/template-header-file.h)."
     - id: 3
       text: "Always add class and public member comments."
     - id: 4
@@ -165,7 +165,7 @@
       text: "Use `using` instead of `typedef`."
     - id: 7
       text: "Use uniform initialization except for container constructors where you don't want to pass elements."
-      ref: "/2015/06/21/uniform-initialization"
+      ref: "/2015/07/24/uniform-initialization"
     - id: 8
       text: "Use `std::array` instead of c arrays."
     - id: 9
@@ -212,7 +212,7 @@
       text: "`dynamic_cast` is not the default for down casts; if you know the type, use `static_cast`."
     - id: 3
       text: "Be aware that resizing `std::vector`s invalidates iterators."
-      ref: "2015/07/23/validity-of-iterators"
+      ref: "/2015/07/24/validity-of-iterators"
     - id: 4
       text: "Avoid allocating container classes on the heap."
     - id: 5

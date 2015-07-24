@@ -1,7 +1,7 @@
 # Site settings
-title:       C++ and GUI Development Guidelines
+title:       Development Guidelines
 email:       max.jendruk@student.hpi.de
-author:      hpicgs 
+author:      cginternals 
 description: "C++ and GUI programming guidelines of the Computer Graphics Systems Group at the Hasso Plattner Institute."
 baseurl:     "/guidelines"
 

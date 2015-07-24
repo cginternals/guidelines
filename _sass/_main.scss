@@ -172,7 +172,7 @@ $navbar-width: 19em;
 
 $main-color: $sanjuan;
 $main-color-light: $mariner;
-$accent-color: $creamcan;
+$accent-color: $lynch;
 
 .bg-main-color { background-color: $main-color }
 .bg-accent-color { background-color: $accent-color }
@@ -206,14 +206,20 @@ $accent-color: $creamcan;
     background: $main-color-light;
 }
 
-.title { font-weight: 300 }
+.title { 
+  font-weight: 700;
+  font-family: $heading-font-family;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+}
 
-.menu-button { font-weight: 400 }
+.title-author { 
+  font-weight: 300;
+  font-family: $font-family 
+}
 
-.scroll-to-top-button { font-size: 1.6em }
-
-@media #{$breakpoint-sm} {
-  .scroll-to-top-button { font-size: 2em }
+.title-wrapper {
+  line-height: 100%;
 }
 
 /* Components */
@@ -236,3 +242,11 @@ $accent-color: $creamcan;
 .webkit-scrollbar::-webkit-scrollbar-thumb {
   background: darken($main-color, 10%);
 }
+
+.scroll-to-top-button { font-size: 1.6em }
+
+@media #{$breakpoint-sm} {
+  .scroll-to-top-button { font-size: 2em }
+}
+
+

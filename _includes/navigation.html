@@ -14,13 +14,13 @@
       {% if node.in_menu and node_url_parts_size < 4 %}
         {% if page.url == node.url or (node.title == "Articles" and (page.is_post or base_url contains node_base_url) %}
           {% assign active = true %}
-          {% assign active_classes = "main-color bg-accent-color" %}
+          {% assign active_classes = "bg-accent-color" %}
         {% else %}
           {% assign active = false %}
           {% assign active_classes = "" %}
         {% endif %}
         <li class="col-12">
-          <a class="px2 md-px3 block button button-transparent menu-button {{ active_classes }}" 
+          <a class="px2 md-px3 block button button-transparent {{ active_classes }}" 
               href='{{ node.url | prepend: site.baseurl }}'>
               {{node.title}}
           </a>
