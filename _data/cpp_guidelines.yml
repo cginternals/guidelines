@@ -33,7 +33,7 @@
     - id: 4
       text: "Use [CamelCase](http://en.wikipedia.org/wiki/CamelCase) for files containing structs, classes, or enums."
     - id: 5
-      text: "Omit prefixes (e.g., `get`) for getters."
+      text: "Omit prefixes for getters, e.g., `get`."
       ref: "/2015/06/21/getter-setter-naming"
     - id: 6
       text: "Add `set` prefix to setters."
@@ -56,7 +56,7 @@
     - id: 5
       text: "Avoid friend declarations."
     - id: 7
-      text: "Use `struct` for Plain Old Data structors ([POD](https://de.wikipedia.org/wiki/Plain_Old_Data_structure)), `class` when using object-oriented features."
+      text: "Use `struct` for Plain Old Data structures ([POD](https://de.wikipedia.org/wiki/Plain_Old_Data_structure)), `class` when using object-oriented features."
     - id: 8
       text: "Don't use nested classes in a public interface. (They cannot be forward declared.)"
     - id: 9
