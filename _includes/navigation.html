@@ -30,7 +30,7 @@
             {% for category in site.data[node.data] %}
               <li class="md-col-12 col-6">
                 <a class="smaller md-small md-px4 px3 block button button-transparent menu-button" 
-                    href="#{{ category.id }}" >
+                    href="{% if category.ref %}{{ category.ref | prepend: site.baseurl }}{% else %}#{{ category.id }}{% endif %}" >
                   {{ category.title }}
                 </a>
               </li>

@@ -19,6 +19,9 @@
       text: "Use `<` and `>` for external libraries as well as local public includes."
     - id: 4
       text: "Be consistent within your own code and the project's code that you are working on."
+    - id: 5
+      text: "For published code, adhere to our code formatting guide"
+      ref: "/../styleguide/style.html"
 
 - id: 3 
   name: naming_conventions
@@ -130,8 +133,8 @@
   title: Comment Style
   entries:
     - id: 1
-      text: "Follow the comment style guidelines specific to the project."
-      ref: "/2015/07/24/comment-style-guide"
+      text: "For APIs of published code follow the comment style guidelines."
+      ref: "/../styleguide/comments.html"
     - id: 2
       text: "When creating new class files, use [this template](/guidelines/resources/template-header-file.h)."
     - id: 3

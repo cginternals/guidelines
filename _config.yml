@@ -2,7 +2,7 @@
 title:       Development Guidelines
 email:       max.jendruk@student.hpi.de
 author:      cginternals 
-description: "C++ and GUI programming guidelines of the Computer Graphics Systems Group at the Hasso Plattner Institute."
+description: "C++ and GUI programming guidelines of CG Internals."
 baseurl:     "/guidelines"
 
 # Build settings
@@ -25,5 +25,3 @@ default:
   values:
     in_menu: no
     weight: 0
-
-
