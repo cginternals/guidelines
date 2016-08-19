@@ -1,13 +1,11 @@
 ---
 layout: post
 title: Naming Conventions for Accessors
-date: 2015-06-21 01:03:04
-categories: c++
 ---
 
 When naming accessors within classes, non-trivial getters and queries, i.e., those that perform calculations, you should prepended `get`. All other getters have no prefix and setters have the `set` prefix.
 
-{% highlight c++ %}
+{% highlight cpp %}
 class Object
 {
 public:

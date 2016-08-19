@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<section id="header" class="container">
+  <header>
+    <div class="row text-xs-center">
+      <div class="col-md-10 col-md-offset-1">
+        <h1>{{ site.title }}</h1>
+        <p class="lead">
+          The following guidelines cover best practices and design decisions that we chose to adhere in <a href="https://github.com/cginternals">our projects</a>. It is not our intention to provide a universal style guide for C++.</p>
+      </div>
+    </div>
+  </header>
+</section>
+
+
+{% assign categories = site.data["cpp_guidelines"] %}
+{% assign num_categories = categories | size %}
+
+<section id="toc" class="container">
+
+  <div class="row text-xs-center">
+  	<div class="col-xs-12 col-xs-offset-0">
+  	  <h2>Table of Content</h2>
+  	  <ol>
+      {% for category in categories %}
+        <li value="{{ category.id }}"><a href="{{ category.id | prepend: "/#" | prepend: site.baseurl }}">{{ category.title }}</a></li>
+      {% endfor %}
+      </ol>
+    </div>
+  </div>
+
+</section>
+
+
+{% for category in categories %}
+<section id="guidelines" class="container">
+
+  <div class="row" id="{{ category.id }}">
+  	<div class="col-md-1 col-md-offset-2 col-xs-1 col-xs-offset-1 text-xs-right"><h2>{{ category.id }}</h2></div>
+    <div class="col-md-7 col-xs-9 col-xs-offset-0 clearfix"><h2>{{ category.title }}</h2></div>
+  </div>
+
+  {% for post in category.entries %}
+  {% capture post_id %}{{category.id}}.{{post.id}}{% endcapture %}
+
+  <div class="row" id="{{ post_id }}">
+	<div class="col-md-1 col-md-offset-2 col-xs-1 col-xs-offset-1 text-xs-right">{{ post_id }}</div>
+	<div class="col-md-7 col-xs-9 col-xs-offset-0 clearfix">{{ post.text | markdownify | remove: '<p>' | remove: '</p>' }}{% if post.ref %}<a href="{{ post.ref | prepend: '/articles' | prepend: site.baseurl}}">[more]</a>{% endif %}</div>
+	<div class="col-md-7 col-md-offset-3 col-xs-9 col-xs-offset-2"><input readonly class="form-control form-control-sm js-select-all text-muted" type="text" value="{{ post_id | prepend: "/#" | prepend: site.baseurl | prepend: "http://cginternals.github.io" }}"></div>
+  </div>
+
+  {% endfor %}
+
+</section>
+{% endfor %} 

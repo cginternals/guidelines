@@ -21,7 +21,7 @@
       text: "Be consistent within your own code and the project's code that you are working on."
     - id: 5
       text: "For published code, adhere to our code formatting guide"
-      ref: "/../styleguide/style.html"
+      ref: "/style-guide"
 
 - id: 3 
   name: naming_conventions
@@ -37,10 +37,10 @@
       text: "Use [CamelCase](http://en.wikipedia.org/wiki/CamelCase) for files containing structs, classes, or enums."
     - id: 5
       text: "Omit prefixes for getters, e.g., `get`."
-      ref: "/2015/06/21/getter-setter-naming"
+      ref: "/getter-setter-naming"
     - id: 6
       text: "Add `set` prefix to setters."
-      ref: "/2015/06/21/getter-setter-naming"
+      ref: "/getter-setter-naming"
     - id: 7
       text: "Add `m_` prefix to member variables, `s_` to static member variables, `t_` to thread-local variables, and `g_` to global variables."
     - id: 8
@@ -64,7 +64,7 @@
       text: "Don't use nested classes in a public interface. (They cannot be forward declared.)"
     - id: 9
       text: "Adhere to the given declaration order."
-      ref: "/2015/06/30/declaration-order/"
+      ref: "/declaration-order/"
 
 - id: 5
   name: designing_interface_signatures
@@ -72,7 +72,7 @@
   entries:
     - id: 1
       text: "Follow the table of parameter passing."
-      ref: "/2015/06/17/parameter-passing"
+      ref: "/parameter-passing"
     - id: 2
       text: "Declare member functions that do not change the member variables `const`."
 
@@ -103,22 +103,22 @@
       text: "Initialize all declared variables (especially basic types like `bool`, `int` and `float`)."
     - id: 5
       text: "Prefer the standard template library (especially the algorithms library) over custom code."
-      ref: "/2015/06/21/standard-template-library"
+      ref: "/standard-template-library"
     - id: 6
       text: "Make use of suffix literals."
     - id: 7
       text: "Prefer range-based for loops over iterators over index based access."
     - id: 8
       text: "Avoid owning raw pointers, new and delete (Smart pointers are the default)."
-      ref: "/2015/07/23/owning-and-non-owning-raw-pointers"
+      ref: "/owning-and-non-owning-raw-pointers"
     - id: 9
       text: "Use non-owning raw `*` and `&` for parameters and return values."
-      ref: "/2015/07/24/owning-and-non-owning-raw-pointers/"
+      ref: "/owning-and-non-owning-raw-pointers/"
     - id: 10
       text: "When passing pointers, handle passing a `nullptr`."
     - id: 11
       text: "Declare constant variables `const`."
-      ref: "/2015/07/24/const-type-qualifier"
+      ref: "/const-type-qualifier"
     - id: 12
       text: "Prefer small and focused functions."
     - id: 13
@@ -134,7 +134,7 @@
   entries:
     - id: 1
       text: "For APIs of published code follow the comment style guidelines."
-      ref: "/../styleguide/comments.html"
+      ref: "/comment-style-guide"
     - id: 2
       text: "When creating new class files, use [this template](/guidelines/resources/template-header-file.h)."
     - id: 3
@@ -157,7 +157,7 @@
       text: "Use `override` for overridden methods."
     - id: 2
       text: "Use `auto` where applicable (see right-hand style)."
-      ref: "/2015/06/21/almost-always-auto"
+      ref: "/almost-always-auto"
     - id: 3
       text: "Capture variables in lambdas explicitly."
     - id: 4
@@ -168,7 +168,7 @@
       text: "Use `using` instead of `typedef`."
     - id: 7
       text: "Use uniform initialization except for container constructors where you don't want to pass elements."
-      ref: "/2015/07/24/uniform-initialization"
+      ref: "/uniform-initialization"
     - id: 8
       text: "Use `std::array` instead of c arrays."
     - id: 9
@@ -215,7 +215,7 @@
       text: "`dynamic_cast` is not the default for down casts; if you know the type, use `static_cast`."
     - id: 3
       text: "Be aware that resizing `std::vector`s invalidates iterators."
-      ref: "/2015/07/24/validity-of-iterators"
+      ref: "/validity-of-iterators"
     - id: 4
       text: "Avoid allocating container classes on the heap."
     - id: 5

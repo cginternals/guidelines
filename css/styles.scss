@@ -1,10 +1,185 @@
 ---
-# The scss file which include files from _sass/
+# Front matter comment to ensure Jekyll properly reads file.
 ---
-
 @charset "utf-8";
 
-@import "variables";
-@import "basscss-sass/basscss";
-@import "main";
-@import "solarized-light";
+// variables override
+
+$brand-color-0: rgb(  0,  85, 124);
+$brand-color-1: rgb( 24, 109, 148);
+$brand-color-2: rgb( 52, 136, 173);
+$brand-color-3: rgb(129, 193, 220);
+$brand-color-4: rgb(187, 229, 243);
+$brand-color-5: rgb(238, 246, 254);
+
+$code-color: $brand-color-1;
+$text-muted: #eceeef; // $gray-lighter
+
+$enable-rounded: true;
+
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-monospace: 'Source Code Pro', monospace;
+
+$headings-font-weight: 300;
+
+$brand-dark: $brand-color-1;
+$brand-light: $brand-color-4;
+$brand-primary: $brand-color-2;
+
+$jumbotron-bg: transparent;
+$jumbotron-padding: 0rem;
+
+$link-color: $brand-color-1;
+$link-hover-color: $brand-color-3;
+$link-hover-decoration: none;
+
+$dropdown-link-color: $link-color;
+$dropdown-link-hover-color: $link-hover-color;
+$dropdown-link-hover-bg: transparent;
+
+// Import customized bootstrap from `sass_dir` (defaults to `_sass`)
+@import
+  "bootstrap-custom",
+  "jekyll_pygments_github"
+;
+
+p {
+  hyphens: auto;
+  @hyphenation-resource
+}
+
+h1 {
+  padding-top: 2rem;
+}
+
+body {
+  overflow-y: scroll; // always show scrollbar
+}
+
+footer {
+  margin-bottom: 1rem;
+}
+
+.navbar {
+
+  padding: 0;
+  background-color: $body-bg;
+  //opacity: 0.92;
+
+  img {
+    height: 1.35rem;
+    width: auto;
+  }
+
+  .dropdown-menu {
+    border: none;
+    margin-right: .9375rem;
+  }
+
+  .dropdown-item {
+    color: $navbar-light-color; 
+
+    @include hover-focus {
+      color: $navbar-light-hover-color; 
+      background: none;
+    }  
+  }
+  .dropdown-item.active {
+    color: $navbar-light-active-color; 
+    background: none;
+  }
+}
+
+
+
+.text-justify {
+  text-align: justify;
+}
+
+.row {
+  margin-top: 1rem;
+}
+
+@media (min-width: 75em) {
+.container {
+    max-width: 60rem;
+}}
+
+section#header {
+  padding: 8rem 0 2rem 0;
+}
+
+section#toc {
+  padding: 0rem 0 4rem 0;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+
+// guidelines
+
+section#guidelines {
+
+  .form-control {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  td.gid {
+    text-align: right;
+    width: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+section#toc {
+  
+  ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
+
+section#post {
+  padding: 0;
+}
+
+section#posts {
+  padding: 2rem 0 0; 
+}
+
+table.table-centered, table.table-centered th {
+  text-align: center;
+}
+
+table.table-centered td {
+  vertical-align: middle;
+} 
+
+
+footer {
+  padding-top: 4rem;
+}
+
+/* https://gist.github.com/larrybotha/7881691
+ * 
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src$=".svg"] {
+  width: 100%; 
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%; 
+  }
+}
+

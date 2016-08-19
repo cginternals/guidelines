@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Almost Always Auto style
-date: 2015-06-21 01:17:24
-categories: c++
 ---
 
 With the rise of C++11, we see a paradigm shift in C++ from the so-called left-to-right declaration style. For instance, function return types can now be written right from the function name and the new `using` directive also has the type on the right. Variable declaration with `auto` is just a part of the larger change that is going on. There are many advantages of using auto, including no implicit accidental conversion, removal of visual clutter, less refactoring overhead, consistency. Therefore, as a general rule, auto can and should be applied except in a few cases, when moving is either expensive or forbidden.

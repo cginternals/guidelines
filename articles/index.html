@@ -1,21 +1,27 @@
 ---
-layout: page
-title: Articles
-in_menu: yes
+layout: default
 ---
 
-{% for post in paginator.posts %}
-  <section class="mt3 border-bottom">
-    <a class="unobstrusive-link" href="{{ post.url | prepend: site.baseurl }}">
-      <h2 class="mt0">{{ post.title }}</h2>
-      <p>
-        {% if post.summary %}
-          {{ post.summary }}
-        {% else %}
-          {{ post.excerpt }}
-        {% endif %}
-      </p>
-    </a>
-  </section>
+<section id="header" class="container">
+  <header>
+    <div class="row text-xs-center">
+      <div class="col-md-10 col-md-offset-1">
+        <h1>{{ site.title }} Articles</h1>
+      </div>
+    </div>
+  </header>
+</section>
+
+
+<section id="posts">
+{% for post in site.posts reversed %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+        <a href="{{ site.baseurl }}{{ post.url }}"><h4>{{ post.title }}</h4></a>
+        <p>{% if post.summary %}{{ post.summary }}{% else %}{{ post.content | strip_html | truncatewords:28 }}{% endif %} <a href="{{ site.baseurl }}{{ post.url }}">[more]</a></p>
+      </div>
+    </div>
+  </div>
 {% endfor %}
-{% include pagination.html %}
+</section>

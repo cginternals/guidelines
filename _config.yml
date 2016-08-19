@@ -1,17 +1,37 @@
 # Site settings
-title:       Development Guidelines
-email:       max.jendruk@student.hpi.de
-author:      cginternals 
-description: "C++ and GUI programming guidelines of CG Internals."
-baseurl:     "/guidelines"
+timezone: Europe/Berlin
 
-# Build settings
-markdown:     kramdown
-permalink:    "articles/:year/:month/:day/:title/"
-paginate:     5
-paginate_path: "/articles/page/:num"
-sass:
-  compressed: true
+baseurl: '/guidelines' # the subpath of your site, e.g. /blog/
+url: 'https://cginternals.github.io/guidelines' # the base hostname & protocol for your site
+
+title: 'C++ Programming Guidelines'
+author: 'CG Internals, Potsdam, Germany'
+
+google_font_sans_serif: 'Source+Sans+Pro:600,300'
+google_font_monospace: 'Source+Code+Pro:400'
+
+# Handling Reading
+safe: true
+encoding: utf-8
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+permalink: "articles/:title/"
+#paginate:     5
+#aginate_path: "/articles/page/:num"
+
+# Outputting
+exclude: [
+  '.htpasswd',
+  'node_modules',
+  'Gemfile',
+  'vendor']
 
 default:
   scope:
@@ -25,3 +45,7 @@ default:
   values:
     in_menu: no
     weight: 0
+
+# CSS Minification
+sass:
+  style: compressed

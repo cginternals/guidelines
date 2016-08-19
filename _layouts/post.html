@@ -1,24 +1,29 @@
 ---
 layout: default
-is_post: yes
 ---
 
-{% assign minutes = content | number_of_words | divided_by: 180 %}
-{% if minutes == 0 %}
-{% assign minutes = 1 %}
-{% endif %}
+<article class="container">
+
+  <section id="header" class="container">
+    <header>
+      <div class="row text-xs-center">
+        <div class="col-md-10 col-md-offset-1">
+          <h1>{{ page.title }}</h1>
+        </div>
+      </div>
+    </header>
+  </section>
 
 
-<article>
-  <header>
-    <h1>{{ page.title }} </h1>
-    <p class="mb3 gray">
-      <em>{{ page.date | date: "%b %-d, %Y" }}</em><br>
-      {% if page.update_date %}
-        <em>Updated: {{ page.update_date | date: "%b %-d, %Y" }}</em><br>
-      {% endif %}
-      <em>{{ minutes }} minute read</em>
-    </p>
-  </header>
-  {{ content }}
+  <section id="post" class="container">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+      <p>{{ content }}</p>
+      </div>
+    </div>
+
+  </section>
+
 </article>
+    

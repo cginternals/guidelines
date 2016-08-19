@@ -1,18 +1,22 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 {% include head.html %}
-  <body ontouchstart="">
-    <div class="md-ml-navbar">
-      {% include header.html %}
-      <main role="main" class="container flex flex-column bg-white" style="min-height:100vh">
-        <div class="flex-auto col-12 mx-auto md-p3 p2 ">
-          {{ content }}
-        </div>
-        <div class="mx-auto p2">
-          {% include footer.html %}
-        </div>
-      </main>
-    </div>
-    {% include scroll_to_top_button.html %}
-  </body>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+{% include navbar.html %}
+
+{{ content }}
+
+{% include footer.html %}
+
+{% include scripts-3rdp.html %}
+{% include scripts.html %}
+
+</body>
 </html>
